@@ -33,14 +33,12 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
 
     ```js
     export default defineNuxtConfig({
-      modules: [
-        'nuxt-snackbar',
-        snackbar: {
-          bottom: true,
-          right: true,
-          duration: 5000
-        },
-      ]
+      modules: ['nuxt-snackbar'],
+      snackbar: {
+        bottom: true,
+        right: true,
+        duration: 5000
+      }
     })
     ```
 
