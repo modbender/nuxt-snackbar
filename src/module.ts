@@ -1,3 +1,4 @@
+import { defu } from "defu";
 import {
   defineNuxtModule,
   isNuxt2,
@@ -40,7 +41,16 @@ export default defineNuxtModule({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
     nuxt.options.css.push("vue3-snackbar/styles");
-    nuxt.options.runtimeConfig.snackbar = options;
+
+    nuxt.options.runtimeConfig.snackbar = defu(
+      nuxt.options.runtimeConfig.snackbar,
+      options
+    );
+
+    nuxt.options.runtimeConfig.public.snackbar = defu(
+      nuxt.options.runtimeConfig.public.snackbar,
+      options
+    );
 
     addImports({
       name: "useSnackbar",
@@ -57,10 +67,6 @@ export default defineNuxtModule({
           name: "NuxtSnackbar",
           filePath: resolver.resolve("./runtime/component"),
         });
-
-        nuxt.options.runtimeConfig.public =
-          nuxt.options.runtimeConfig.public || {};
-        nuxt.options.runtimeConfig.public.snackbar = options;
       }
     });
   },
