@@ -1,12 +1,3 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: Nuxt Snackbar
-- Package name: nuxt-snackbar
-- Description: My new Nuxt module
--->
-
 # Nuxt Snackbar
 
 [![npm version][npm-version-src]][npm-version-href]
@@ -14,44 +5,81 @@ Find and replace all on all files (CMD+SHIFT+F):
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-Nuxt Snackbar provides a wrapper for vue3-snackbar to be used with Nuxt.js
+Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigrileyuk/vue3-snackbar) to be used with Nuxt.js
 
-**Looking for helpers!**
-
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
-
-<!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- Easy to integrate
+- Instantly usable Snackbar, no config required
+- Options to fully customize snackbar (See all [options](https://github.com/craigrileyuk/vue3-snackbar#props))
 
 ## Quick Setup
 
 1. Add `nuxt-snackbar` dependency to your project
 
-```bash
-# Using pnpm
-pnpm add -D nuxt-snackbar
+    ```bash
+    # Using pnpm
+    pnpm add nuxt-snackbar
 
-# Using yarn
-yarn add --dev nuxt-snackbar
+    # Using yarn
+    yarn add nuxt-snackbar
 
-# Using npm
-npm install --save-dev nuxt-snackbar
-```
+    # Using npm
+    npm install nuxt-snackbar
+    ```
 
 2. Add `nuxt-snackbar` to the `modules` section of `nuxt.config.ts`
 
-```js
-export default defineNuxtConfig({
-  modules: [
-    'nuxt-snackbar'
-  ]
-})
-```
+    ```js
+    export default defineNuxtConfig({
+      modules: [
+        'nuxt-snackbar',
+        snackbar: {
+          bottom: true,
+          right: true,
+          duration: 5000
+        },
+      ]
+    })
+    ```
+
+3. Add the Snackbar Component to app.vue
+
+    ```xml
+    <template>
+      <main>
+        Main Content
+      </main>
+      <NuxtSnackbar />
+    </template>
+    ```
+
+4. Call `useSnackbar()` to use snackbar methods and features.
+
+    Composition API
+    ```js
+    const snackbar = useSnackbar();
+
+    snackbar.add({
+        type: 'success',
+        text: 'This is a snackbar message'
+    })
+    ```
+
+    Options API
+    ```js
+    export default {
+        methods: {
+            successMessage() {
+                this.$snackbar.add({
+                    type: 'success',
+                    text: 'This is a snackbar message'
+                })
+            }
+        }
+    }
+    ```
 
 That's it! You can now use Nuxt Snackbar in your Nuxt app ✨
 
@@ -82,14 +110,12 @@ npm run release
 ```
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-snackbar/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-version-href]: https://npmjs.com/package/nuxt-snackbar
-
 [npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-snackbar.svg?style=flat&colorA=18181B&colorB=28CF8D
 [npm-downloads-href]: https://npmjs.com/package/nuxt-snackbar
-
 [license-src]: https://img.shields.io/npm/l/nuxt-snackbar.svg?style=flat&colorA=18181B&colorB=28CF8D
 [license-href]: https://npmjs.com/package/nuxt-snackbar
-
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
