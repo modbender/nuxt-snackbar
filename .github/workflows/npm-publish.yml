@@ -20,24 +20,19 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      
+          registry-url: https://registry.npmjs.org/
+
       - run: corepack enable
 
-  publish-npm:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-          
-      - run: npm publish
+      - name: Install
+        run: yarn install
+
+      - name: Publish to NPM
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
         
       - run: npx changelogithub # or changelogithub@0.12 if ensure the stable result
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          
