@@ -2,7 +2,7 @@ import { defu } from "defu";
 import {
   defineNuxtModule,
   isNuxt2,
-  addImports,
+  addImportsDir,
   addPlugin,
   addComponent,
   createResolver,
@@ -52,11 +52,7 @@ export default defineNuxtModule({
       options
     );
 
-    addImports({
-      name: "useSnackbar",
-      as: "useSnackbar",
-      from: resolver.resolve("./runtime/composables"),
-    });
+    addImportsDir(resolver.resolve("./runtime/composables"));
 
     nuxt.hook("modules:done", () => {
       if (isNuxt2()) {
@@ -65,7 +61,7 @@ export default defineNuxtModule({
         addPlugin(resolver.resolve("./runtime/plugin"));
         addComponent({
           name: "NuxtSnackbar",
-          filePath: resolver.resolve("./runtime/component"),
+          filePath: resolver.resolve("./runtime/components/NuxtSnackbar"),
         });
       }
     });

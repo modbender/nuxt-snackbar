@@ -7,6 +7,8 @@
 </template>
 
 <script setup>
+import { useSnackbar } from '#imports';
+
 const snackbar = useSnackbar();
 
 const test = () => {

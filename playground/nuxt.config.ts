@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   snackbar: {
     bottom: true,
     right: true,
-    duration: 5000
+    duration: 5000,
   },
   // Change this to whatever the node_modules path ends up being
   modules: ["./src/module"],
