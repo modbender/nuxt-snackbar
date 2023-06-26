@@ -53,7 +53,7 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
     </template>
     ```
 
-    If you are using a multipage application, add it to `layouts/default.vue` instead
+    If you are using a multi-page application, add it to `layouts/default.vue` instead
 
     ```xml
     <template>
