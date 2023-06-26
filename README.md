@@ -42,13 +42,22 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
     })
     ```
 
-3. Add the Snackbar Component to app.vue
+3. Add the Snackbar Component to `app.vue`
 
     ```xml
     <template>
       <main>
         Main Content
       </main>
+      <NuxtSnackbar />
+    </template>
+    ```
+
+    If you are using a multipage application, add it to `layouts/default.vue` instead
+
+    ```xml
+    <template>
+      <slot />
       <NuxtSnackbar />
     </template>
     ```
