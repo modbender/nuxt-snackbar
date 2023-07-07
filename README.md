@@ -53,8 +53,17 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
     </template>
     ```
 
-    If you are using a multi-page application, add it to `layouts/default.vue` instead
+    If you are using a layouts and pages in your application
 
+   ```xml
+    <template>
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+      <NuxtSnackbar />
+    </template>
+   ```
+   If none of the above works, you can try adding it to `layouts/default.vue` instead
     ```xml
     <template>
       <slot />
@@ -62,7 +71,7 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
     </template>
     ```
 
-4. Call `useSnackbar()` to use snackbar methods and features.
+5. Call `useSnackbar()` to use snackbar methods and features.
 
     Composition API
     ```js
