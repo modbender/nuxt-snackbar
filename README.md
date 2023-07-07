@@ -53,7 +53,7 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
     </template>
     ```
 
-    If you are using a layouts and pages in your application
+   If you are using layouts and pages in your application
 
    ```xml
     <template>
@@ -63,7 +63,9 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
       <NuxtSnackbar />
     </template>
    ```
+   
    If none of the above works, you can try adding it to `layouts/default.vue` instead
+   
     ```xml
     <template>
       <slot />
