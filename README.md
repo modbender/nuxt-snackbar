@@ -5,6 +5,8 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
+A Snackbar/Toast Implementation independent of CSS framework especially for Nuxt 3
+
 Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigrileyuk/vue3-snackbar) to be used with Nuxt.js
 
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
