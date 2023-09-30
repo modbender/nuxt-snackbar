@@ -55,7 +55,7 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
     </template>
     ```
 
-   If you are using layouts and pages in your application
+   If you are using layouts and pages in your application, your `app.vue` should look something like this.
 
    ```xml
     <template>
