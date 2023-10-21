@@ -13,8 +13,8 @@ const snackbar = useSnackbar();
 
 const test = () => {
   snackbar.add({
-    type: "success",
-    text: "Testing",
+    type: "info",
+    text: "This is a snackbar message",
   });
 };
 </script>
