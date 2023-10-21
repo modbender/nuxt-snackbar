@@ -1,4 +1,4 @@
-import NuxtSnackbar from '../../../src/nuxt-snackbar'
+import NuxtSnackbar from '../../../src/module'
 
 export default defineNuxtConfig({
   modules: [
