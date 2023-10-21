@@ -1,6 +1,6 @@
 {
   "name": "nuxt-snackbar",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Nuxt Snackbar module using vue3-snackbar",
   "repository": "modbender/nuxt-snackbar",
   "license": "MIT",
