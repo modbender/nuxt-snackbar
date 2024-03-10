@@ -48,10 +48,12 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
 
     ```xml
     <template>
-      <main>
-        Main Content
-      </main>
-      <NuxtSnackbar />
+      <div>
+        <main>
+          Main Content
+        </main>
+        <NuxtSnackbar />
+      </div>
     </template>
     ```
 
@@ -61,8 +63,8 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
     <template>
       <NuxtLayout>
         <NuxtPage />
+        <NuxtSnackbar />
       </NuxtLayout>
-      <NuxtSnackbar />
     </template>
    ```
    
@@ -70,8 +72,10 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
    
     ```xml
     <template>
-      <slot />
-      <NuxtSnackbar />
+      <div>
+        <slot />
+        <NuxtSnackbar />
+      </div>
     </template>
     ```
 
