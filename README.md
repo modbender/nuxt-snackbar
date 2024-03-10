@@ -22,13 +22,13 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
 
     ```bash
     # Using pnpm
-    pnpm add nuxt-snackbar
+    pnpm add -D nuxt-snackbar
 
     # Using yarn
-    yarn add nuxt-snackbar
+    yarn add -D nuxt-snackbar
 
     # Using npm
-    npm install nuxt-snackbar
+    npm install --save-dev nuxt-snackbar
     ```
 
 2. Add `nuxt-snackbar` to the `modules` section of `nuxt.config.ts`
