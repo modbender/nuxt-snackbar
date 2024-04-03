@@ -21,13 +21,6 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
 1. Add `nuxt-snackbar` dependency to your project
 
     ```bash
-    # Using pnpm
-    npx nuxi@latest module add snackbar
-
-    # Using yarn
-    npx nuxi@latest module add snackbar
-
-    # Using npm
     npx nuxi@latest module add snackbar
     ```
 
