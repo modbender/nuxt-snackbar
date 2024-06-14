@@ -13,7 +13,7 @@ export default defineNuxtModule({
     name: "nuxt-snackbar",
     configKey: "snackbar",
     compatibility: {
-      nuxt: "^3.0.0",
+      nuxt: ">=3.0.0",
     },
   },
   defaults: {
