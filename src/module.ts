@@ -27,7 +27,9 @@ export default defineNuxtModule({
     warning: "#fb8c00",
     info: "#2196f3",
     duration: 4000,
+    limit: null,
     messageClass: "",
+    messageActionClass: "",
     zIndex: 9999,
     dense: false,
     shadow: true,
@@ -36,6 +38,8 @@ export default defineNuxtModule({
     backgroundOpacity: 0.12,
     backgroundColor: "currentColor",
     baseBackgroundColor: "#ffffff",
+    dismissOnActionClick: false,
+    iconPresets: null
   },
   hooks: {},
   setup(options, nuxt) {
