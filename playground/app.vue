@@ -1,7 +1,9 @@
 <template>
   <main>
     Main Content
-    <button @click="test">Open Snackbar</button>
+    <button @click="test">
+      Open Snackbar
+    </button>
     <NuxtSnackbar />
   </main>
 </template>
