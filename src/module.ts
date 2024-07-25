@@ -1,16 +1,20 @@
 import { defu } from "defu";
 import {
   defineNuxtModule,
-  isNuxt2,
-  addImportsDir,
+  addImports,
   addPlugin,
   addComponent,
   createResolver,
 } from "@nuxt/kit";
 
-export default defineNuxtModule({
+import type { ModuleOptions } from "./types";
+
+import { name, version } from "../package.json";
+
+export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: "nuxt-snackbar",
+    name,
+    version,
     configKey: "snackbar",
     compatibility: {
       nuxt: ">=3.0.0",
@@ -27,7 +31,7 @@ export default defineNuxtModule({
     warning: "#fb8c00",
     info: "#2196f3",
     duration: 4000,
-    limit: null,
+    limit: 0,
     messageClass: "",
     messageActionClass: "",
     zIndex: 9999,
@@ -39,7 +43,7 @@ export default defineNuxtModule({
     backgroundColor: "currentColor",
     baseBackgroundColor: "#ffffff",
     dismissOnActionClick: false,
-    iconPresets: null
+    iconPresets: {},
   },
   hooks: {},
   setup(options, nuxt) {
@@ -47,27 +51,30 @@ export default defineNuxtModule({
     nuxt.options.css.push("vue3-snackbar/styles");
 
     nuxt.options.runtimeConfig.snackbar = defu(
-      nuxt.options.runtimeConfig.snackbar,
+      nuxt.options.runtimeConfig.snackbar as ModuleOptions,
       options
     );
 
     nuxt.options.runtimeConfig.public.snackbar = defu(
-      nuxt.options.runtimeConfig.public.snackbar,
+      nuxt.options.runtimeConfig.public.snackbar as ModuleOptions,
       options
     );
 
-    addImportsDir(resolver.resolve("./runtime/composables"));
+    nuxt.options.build.transpile = [
+      ...(nuxt.options.build.transpile || []),
+      "vue3-snackbar",
+    ];
 
-    nuxt.hook("modules:done", () => {
-      if (isNuxt2()) {
-        throw new Error("Vue3 Snackbar is not compatible with Nuxt2");
-      } else {
-        addPlugin(resolver.resolve("./runtime/plugin"));
-        addComponent({
-          name: "NuxtSnackbar",
-          filePath: resolver.resolve("./runtime/components/NuxtSnackbar"),
-        });
-      }
+    addPlugin(resolver.resolve("./runtime/plugin"));
+
+    addImports({
+      name: "useSnackbar",
+      from: "vue3-snackbar",
+    });
+
+    addComponent({
+      name: "NuxtSnackbar",
+      filePath: resolver.resolve("./runtime/components/NuxtSnackbar"),
     });
   },
 });
