@@ -5,6 +5,18 @@
   "repository": "modbender/nuxt-snackbar",
   "license": "MIT",
   "type": "module",
+  "keywords": [
+    "vue",
+    "vue.js",
+    "vue3",
+    "nuxt",
+    "nuxt.js",
+    "nuxt3",
+    "snackbar",
+    "toast",
+    "alerts",
+    "messages"
+  ],
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
