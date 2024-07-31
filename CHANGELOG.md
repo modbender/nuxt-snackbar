@@ -2,6 +2,23 @@
 
 
 
+## v1.1.1
+
+[compare changes](https://github.com/modbender/nuxt-snackbar/compare/v1.1.0...v1.1.1)
+
+### 🩹 Fixes
+
+- Try fixing problems with plugin loading ([dc219f1](https://github.com/modbender/nuxt-snackbar/commit/dc219f1))
+
+### 🏡 Chore
+
+- **release:** V1.1.0 ([87393ba](https://github.com/modbender/nuxt-snackbar/commit/87393ba))
+- Add keywords ([d93d42d](https://github.com/modbender/nuxt-snackbar/commit/d93d42d))
+
+### ❤️ Contributors
+
+- Modbender
+
 ## v1.1.0
 
 [compare changes](https://github.com/modbender/nuxt-snackbar/compare/v1.0.4...v1.1.0)
