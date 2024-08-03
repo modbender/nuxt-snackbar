@@ -60,11 +60,6 @@ export default defineNuxtModule<ModuleOptions>({
       options
     );
 
-    nuxt.options.build.transpile = [
-      ...(nuxt.options.build.transpile || []),
-      "vue3-snackbar",
-    ];
-
     addImports({
       name: "useSnackbar",
       from: "vue3-snackbar",
