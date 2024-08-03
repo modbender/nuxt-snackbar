@@ -2,6 +2,24 @@
 
 
 
+## v1.1.2
+
+[compare changes](https://github.com/modbender/nuxt-snackbar/compare/v1.1.1...v1.1.2)
+
+### 🩹 Fixes
+
+- Revert to not checking nuxt2 ([5d0455c](https://github.com/modbender/nuxt-snackbar/commit/5d0455c))
+- Remove transpile ([988320b](https://github.com/modbender/nuxt-snackbar/commit/988320b))
+
+### 🏡 Chore
+
+- **release:** V1.1.1 ([936bd5b](https://github.com/modbender/nuxt-snackbar/commit/936bd5b))
+- Publish remove workflow ([1c52568](https://github.com/modbender/nuxt-snackbar/commit/1c52568))
+
+### ❤️ Contributors
+
+- Modbender
+
 ## v1.1.1
 
 [compare changes](https://github.com/modbender/nuxt-snackbar/compare/v1.1.0...v1.1.1)
