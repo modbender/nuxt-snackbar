@@ -1,7 +1,6 @@
 import { defu } from "defu";
 import {
   defineNuxtModule,
-  isNuxt2,
   addImports,
   addPlugin,
   addComponent,
@@ -71,17 +70,11 @@ export default defineNuxtModule<ModuleOptions>({
       from: "vue3-snackbar",
     });
 
-    nuxt.hook("modules:done", () => {
-      if (isNuxt2()) {
-        throw new Error("Vue3 Snackbar is not compatible with Nuxt2");
-      } else {
-        addPlugin(resolver.resolve("./runtime/plugin"));
+    addPlugin(resolver.resolve("./runtime/plugin"));
 
-        addComponent({
-          name: "NuxtSnackbar",
-          filePath: resolver.resolve("./runtime/components/NuxtSnackbar"),
-        });
-      }
+    addComponent({
+      name: "NuxtSnackbar",
+      filePath: resolver.resolve("./runtime/components/NuxtSnackbar"),
     });
   },
 });
