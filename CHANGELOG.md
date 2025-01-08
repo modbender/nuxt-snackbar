@@ -13,7 +13,6 @@
 
 ### 🏡 Chore
 
-- **release:** V1.1.1 ([936bd5b](https://github.com/modbender/nuxt-snackbar/commit/936bd5b))
 - Publish remove workflow ([1c52568](https://github.com/modbender/nuxt-snackbar/commit/1c52568))
 
 ### ❤️ Contributors
@@ -30,7 +29,6 @@
 
 ### 🏡 Chore
 
-- **release:** V1.1.0 ([87393ba](https://github.com/modbender/nuxt-snackbar/commit/87393ba))
 - Add keywords ([d93d42d](https://github.com/modbender/nuxt-snackbar/commit/d93d42d))
 
 ### ❤️ Contributors

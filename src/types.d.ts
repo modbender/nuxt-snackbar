@@ -1,13 +1,13 @@
-import { propsModel as ModuleOptions } from "vue3-snackbar/props";
+import type { propsModel as ModuleOptions } from 'vue3-snackbar/props'
 
-export { ModuleOptions };
+export { ModuleOptions }
 
-declare module "nuxt-snackbar" {
+declare module 'nuxt-snackbar' {
   interface NuxtConfig {
-    snackbar?: ModuleOptions;
+    snackbar?: ModuleOptions
   }
 
   interface NuxtOptions {
-    snackbar?: ModuleOptions;
+    snackbar?: ModuleOptions
   }
 }

@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-import { useNuxtApp } from "#imports";
-import { Vue3Snackbar } from "vue3-snackbar";
+import { Vue3Snackbar } from 'vue3-snackbar'
+import { useNuxtApp } from '#imports'
 
-const snackbarOptions = useNuxtApp()?.$snackbarOptions || {};
+const snackbarOptions = useNuxtApp()?.$snackbarOptions || {}
 </script>

@@ -9,12 +9,12 @@
 </template>
 
 <script setup>
-const snackbar = useSnackbar();
+const snackbar = useSnackbar()
 
 const test = () => {
   snackbar.add({
-    type: "info",
-    text: "This is a snackbar message",
-  });
-};
+    type: 'info',
+    text: 'This is a snackbar message',
+  })
+}
 </script>

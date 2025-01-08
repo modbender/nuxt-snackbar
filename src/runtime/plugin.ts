@@ -1,13 +1,15 @@
-import { defineNuxtPlugin, useRuntimeConfig } from "#app";
+import { SnackbarService } from 'vue3-snackbar'
 
-import { SnackbarService } from "vue3-snackbar";
+import { defineNuxtPlugin, useRuntimeConfig } from '#app'
 
-export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(SnackbarService);
+export default defineNuxtPlugin((_nuxtApp) => {
+  const snackbarOptions = useRuntimeConfig().public.snackbar
+
+  _nuxtApp.vueApp.use(SnackbarService)
 
   return {
     provide: {
-      snackbarOptions: useRuntimeConfig().public.snackbar,
+      snackbarOptions,
     },
-  };
-});
+  }
+})
