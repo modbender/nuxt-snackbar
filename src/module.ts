@@ -45,37 +45,40 @@ export default defineNuxtModule<ModuleOptions>({
     dismissOnActionClick: false,
     iconPresets: {},
   },
-  hooks: {},
   setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url)
+    const { resolve } = createResolver(import.meta.url)
 
     nuxt.options.css = [...(nuxt.options.css || []), 'vue3-snackbar/styles']
 
     nuxt.options.runtimeConfig.snackbar = defu(
-      nuxt.options.runtimeConfig.snackbar as ModuleOptions,
+      nuxt.options.runtimeConfig.snackbar,
       options,
     )
 
     nuxt.options.runtimeConfig.public.snackbar = defu(
-      nuxt.options.runtimeConfig.public.snackbar as ModuleOptions,
+      nuxt.options.runtimeConfig.public.snackbar,
       options,
     )
 
-    nuxt.options.build.transpile = [
-      ...(nuxt.options.build.transpile || []),
-      'vue3-snackbar',
-    ]
+    // nuxt.options.build.transpile = [
+    //   ...(nuxt.options.build.transpile || []),
+    //   'vue3-snackbar',
+    // ]
 
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    nuxt.hook('modules:done', () => {
+      addImports({
+        name: 'useSnackbar',
+        from: 'vue3-snackbar',
+      })
 
-    addImports({
-      name: 'useSnackbar',
-      from: 'vue3-snackbar',
-    })
+      addComponent({
+        name: 'NuxtSnackbar',
+        filePath: resolve('./runtime/components/NuxtSnackbar'),
+      })
 
-    addComponent({
-      name: 'NuxtSnackbar',
-      filePath: resolver.resolve('./runtime/components/NuxtSnackbar'),
+      addPlugin({
+        src: resolve('runtime/plugin'),
+      })
     })
   },
 })

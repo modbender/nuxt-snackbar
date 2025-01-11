@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   // Change this to whatever the node_modules path ends up being
   modules: ['../src/module'],
 
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   compatibilityDate: '2024-07-26',
   snackbar: {
