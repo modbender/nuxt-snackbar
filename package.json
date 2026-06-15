@@ -66,5 +66,5 @@
   "overrides": {
     "rimraf": "latest"
   },
-  "packageManager": "pnpm@9.15.4"
+  "packageManager": "pnpm@10.26.0"
 }

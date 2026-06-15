@@ -3,6 +3,7 @@ name: Lint, Test, Publish and Release
 permissions:
   checks: write
   contents: write
+  id-token: write # Required for npm OIDC Trusted Publishing
 
 on:
   push:
@@ -42,11 +43,13 @@ jobs:
       - name: Run prepack
         run: pnpm prepack
 
-      - name: Publish to npm
+      # npm Trusted Publishing uses OIDC — no token needed.
+      # Configure once: npm trust github nuxt-snackbar --file ltpr.yml --repo modbender/nuxt-snackbar --allow-publish
+      - name: Publish to npm (OIDC Trusted Publishing)
         shell: bash
-        run: pnpm publish --access public --no-git-checks
+        run: pnpm publish --access public --no-git-checks --provenance
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
 
       - name: Run github release
         run: npx --yes changelogithub@latest
