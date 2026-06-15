@@ -5,23 +5,29 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-A Snackbar/Toast Implementation independent of CSS framework especially for Nuxt 3
+A Snackbar/Toast implementation for Nuxt that is independent of any CSS framework. Works with Nuxt 3 and Nuxt 4.
 
-Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigrileyuk/vue3-snackbar) to be used with Nuxt.js
+Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/evo-mark/vue3-snackbar) to be used with Nuxt.
 
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+- [📖 &nbsp;Documentation](https://modbender.in/nuxt-snackbar/)
 
 ## Features
 - Easy to integrate
 - Instantly usable Snackbar, no config required
-- Options to fully customize snackbar (See all [options](https://github.com/craigrileyuk/vue3-snackbar#props))
+- Options to fully customize the snackbar (see all [options](https://modbender.in/nuxt-snackbar/configuration/))
+
+## Compatibility
+
+| Nuxt Snackbar | Nuxt        | Vue |
+| ------------- | ----------- | --- |
+| `1.x`         | `3.x`, `4.x` | `3.x` |
 
 ## Quick Setup
 
 1. Add `nuxt-snackbar` dependency to your project
 
     ```bash
-    npx nuxi@latest module add snackbar
+    npx nuxi@latest module add nuxt-snackbar
     ```
 
 2. Add `nuxt-snackbar` to the `modules` section of `nuxt.config.ts`
@@ -72,7 +78,7 @@ Nuxt Snackbar provides a wrapper for [vue3-snackbar](https://github.com/craigril
     </template>
     ```
 
-5. Call `useSnackbar()` to use snackbar methods and features.
+4. Call `useSnackbar()` to use snackbar methods and features.
 
     Composition API
     ```js
@@ -104,27 +110,30 @@ That's it! You can now use Nuxt Snackbar in your Nuxt app ✨
 
 ```bash
 # Install dependencies
-yarn install
+pnpm install
 
 # Generate type stubs
-yarn dev:prepare
+pnpm dev:prepare
 
 # Develop with the playground
-yarn dev
+pnpm dev
 
 # Build the playground
-yarn dev:build
+pnpm dev:build
 
 # Run ESLint
-yarn lint
+pnpm lint
 
 # Run Vitest
-yarn test
-yarn test:watch
+pnpm test
+pnpm test:watch
 
-# Release new version
-yarn release
+# Run type checks
+pnpm test:types
 ```
+
+Releases are published from CI: pushing a `v*` tag runs lint, tests, build,
+and publishes to npm (see `.github/workflows/ltpr.yml`).
 
 <!-- Badges -->
 

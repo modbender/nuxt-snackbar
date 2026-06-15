@@ -1,12 +1,10 @@
 export default defineNuxtConfig({
-  // Prop details at https://github.com/craigrileyuk/vue3-snackbar#props
-
-  // Change this to whatever the node_modules path ends up being
+  // Prop details at https://github.com/evo-mark/vue3-snackbar#props
   modules: ['../src/module'],
 
   devtools: { enabled: false },
 
-  compatibilityDate: '2024-07-26',
+  compatibilityDate: '2025-01-01',
   snackbar: {
     bottom: true,
     right: true,

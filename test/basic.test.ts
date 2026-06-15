@@ -12,4 +12,17 @@ describe('ssr', async () => {
     const html = await $fetch('/')
     expect(html).toContain('<div>basic</div>')
   })
+
+  it('registers and server-renders the NuxtSnackbar component', async () => {
+    const html = await $fetch('/')
+    // vue3-snackbar renders a wrapper element carrying this class.
+    expect(html).toContain('vue3-snackbar')
+  })
+
+  it('auto-imports useSnackbar so the page renders without an unresolved import', async () => {
+    // If `useSnackbar` were not auto-imported, the fixture app would throw
+    // during SSR and this request would reject instead of returning markup.
+    const html = await $fetch('/')
+    expect(html).toContain('basic')
+  })
 })
