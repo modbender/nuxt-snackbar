@@ -2,6 +2,18 @@
 
 
 
+## v1.4.0
+
+[compare changes](https://github.com/modbender/nuxt-snackbar/compare/v1.3.0...v1.4.0)
+
+### 🚀 Enhancements
+
+- Support Nuxt 4, modernize toolchain, add docs ([1bc7ef4](https://github.com/modbender/nuxt-snackbar/commit/1bc7ef4))
+
+### ❤️ Contributors
+
+- Modbender <myanimecruizer@gmail.com>
+
 ## v1.1.2
 
 [compare changes](https://github.com/modbender/nuxt-snackbar/compare/v1.1.1...v1.1.2)
